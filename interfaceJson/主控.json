@@ -1,0 +1,18 @@
+{
+	"3业主站点信息": {
+		"url": "/v1/cms/site/getinfo",
+		"method": "GET",
+		"data": {
+			
+		}
+	},
+	"4修改站点信息": {
+		"url": "/v1/cms/site/update",
+		"method": "GET",
+		"data": {
+			"id": "1",
+			"name": "1",
+			"picUrl": "1"
+		}
+	}
+}

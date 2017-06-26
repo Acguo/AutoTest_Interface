@@ -1,0 +1,12 @@
+Fri, 23 Jun 2017 15:08:37 pylog.py[line:23] INFO 导入接口文件：主控.json
+Fri, 23 Jun 2017 15:08:37 pylog.py[line:27] DEBUG START
+Fri, 23 Jun 2017 15:08:37 pylog.py[line:23] INFO 3业主站点信息: 开始测试
+Fri, 23 Jun 2017 15:08:37 connectionpool.py[line:207] DEBUG Starting new HTTP connection (1): admin.baochiapi.com
+Fri, 23 Jun 2017 15:08:38 connectionpool.py[line:395] DEBUG http://admin.baochiapi.com:80 "GET /v1/cms/site/getinfo HTTP/1.1" 200 90
+Fri, 23 Jun 2017 15:08:38 pylog.py[line:27] DEBUG Request Body:None
+Fri, 23 Jun 2017 15:08:38 pylog.py[line:27] DEBUG Response:{"apistatus":0,"errorCode":1000001,"errorMsgEn":"auth failed!","errorMsg":"认证失败!"}
+Fri, 23 Jun 2017 15:08:38 pylog.py[line:23] INFO 4修改站点信息: 开始测试
+Fri, 23 Jun 2017 15:08:38 connectionpool.py[line:395] DEBUG http://admin.baochiapi.com:80 "GET /v1/cms/site/update?id=1&name=1&picUrl=1 HTTP/1.1" 405 1106
+Fri, 23 Jun 2017 15:08:38 pylog.py[line:27] DEBUG Request Body:None
+Fri, 23 Jun 2017 15:08:38 pylog.py[line:27] DEBUG Response:<!doctype html><html lang="en"><head><title>HTTP Status 405 – Method Not Allowed</title><style type="text/css">h1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} h2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} h3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} b {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} p {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;} a {color:black;} a.name {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 405 – Method Not Allowed</h1><hr class="line" /><p><b>Type</b> Status Report</p><p><b>Message</b> Request method 'GET' not supported</p><p><b>Description</b> The method received in the request-line is known by the origin server but not supported by the target resource.</p><hr class="line" /><h3>Apache Tomcat/8.5.12</h3></body></html>
+Fri, 23 Jun 2017 15:08:38 pylog.py[line:27] DEBUG STOP
