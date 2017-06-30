@@ -35,20 +35,25 @@ class PreRequest:
 
     def upload(self,filename=None):
         Pylog.info(filename + ": 开始上载")
-        src = config.get_config("upload", "src")
-        savefile = config.get_config("upload","savefile")
-        url = "http://admin.baochiapi.com//photo/upload"
-        files = {'pic': open(filename, 'rb')}
-        self.reps = self.httpRequest.upload(url=url, files = files)
-        Pylog.debug("Response:" + self.reps.text)
-        pic = json.loads(self.reps.content)
-        #CSV写入
-        csvfile = open(savefile,'a',encoding='utf8',newline='')
-        writer = csv.writer(csvfile)
-        picId = pic["picid"]
-        picname = re.findall(src+'/(.*)', filename, re.S)
-        writer.writerow([picname[0], picId])
-        csvfile.close()
+        try:
+            src = config.get_config("upload", "src")
+            savefile = config.get_config("upload","savefile")
+            savename = re.findall('E:/OtherFile/(.*)', src, re.S)[0]
+            idfile = savefile + savename + '.csv'
+            url = "http://img.will888.cn/photo/upload"
+            files = {'pic': open(filename, 'rb')}
+            self.reps = self.httpRequest.upload(url=url, files = files)
+            Pylog.debug("Response:" + self.reps.text)
+            pic = json.loads(self.reps.content)
+            #CSV写入
+            csvfile = open(idfile,'a',encoding='utf8',newline='')
+            writer = csv.writer(csvfile)
+            picId = pic["picid"]
+            picname = re.findall(src+'/(.*)', filename, re.S)
+            writer.writerow([picname[0], picId])
+            csvfile.close()
+        except Exception  as e:
+            Pylog.error(e)
 
     def verify_1(self, data):
         game = config.get_config("verifygame","game")
